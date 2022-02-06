@@ -20,6 +20,6 @@ services:
     image: adminer
     restart: always
     ports:
-      - 8181:8080
+      - 8182:8080
 volumes:
   my-db:
