@@ -1,5 +1,6 @@
 package ar.com.factorit.ecommerce.common;
 
+import lombok.Builder;
 import lombok.Data;
 
 @Data
