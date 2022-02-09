@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Data
@@ -22,7 +22,7 @@ public class AuthenticationToken {
     private String token;
 
     @Column(name="created_date")
-    private Date createdDate;
+    private LocalDate createdDate;
 
     @OneToOne(targetEntity = User.class, fetch = FetchType.EAGER)
     @JoinColumn(nullable = false,name="user_id")
@@ -30,7 +30,7 @@ public class AuthenticationToken {
 
     public AuthenticationToken(User user) {
         this.user = user;
-        this.createdDate = new Date();
+        this.createdDate = LocalDate.now();
         this.token = UUID.randomUUID().toString();
     }
 

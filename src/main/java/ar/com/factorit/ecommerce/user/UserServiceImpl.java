@@ -39,9 +39,9 @@ public class UserServiceImpl implements UserService {
         }
 
         User user = User.builder()
+                .userId(signUpDto.getDni())
                 .firstName(signUpDto.getFirstName())
                 .lastName(signUpDto.getFirstName())
-                .dni(signUpDto.getDni())
                 .email(signUpDto.getEmail())
                 .password(encryptedPassword)
                 .build();

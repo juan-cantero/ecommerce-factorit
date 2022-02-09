@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Builder
 public class SignUpDto {
-    private String dni;
+    private Integer dni;
     private String firstName;
     private String lasName;
     private String email;

@@ -16,10 +16,8 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
     @Column(name = "dni")
-    private String dni;
+    private Integer userId;
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
