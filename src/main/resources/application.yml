@@ -3,12 +3,17 @@ server:
 
 spring:
   profiles:
-    active: dev
+    active: dev-inmem-database
   output:
     ansi:
       enabled: always
 
 ---
+
+server:
+  error:
+   include-message: always
+
 spring:
   profiles: dev
   sql:
@@ -21,6 +26,25 @@ spring:
     username: user
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: true
-#    defer-datasource-initialization: true
+    defer-datasource-initialization: true
+
+---
+
+spring:
+  profiles: dev-inmem-database
+  sql:
+    init:
+      mode: always
+  datasource:
+    driver-class-name: org.h2.Driver
+    password: password
+    url: jdbc:h2:mem:ecommerce
+    username: sa
+  jpa:
+    database-platfrom: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    defer-datasource-initialization: true
