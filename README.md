@@ -20,6 +20,20 @@ Ejecutar docker-compose up en la raiz del proyecto (donde se encuentra el docker
 levanta una base de datos mysql y adminer (no es lindo pero sirve para ver las tablas desde el explorador)
 
 
+*** Una vez levantada la app se puede probar con open api: http://localhost:8087/swagger-ui/index.html o se puede importar la coleccion de postman.
+
+
+## Servicios:
+Spring boot:
+  puerto: 8087
+
+Mysql:
+  puerto: 3308
+
+Adminer: 
+  puerto: 8180
+
+
 ### Accesos
 
 base de datos h2:
