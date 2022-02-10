@@ -29,7 +29,7 @@ services:
   ecommerce-main:
     image: juanqui89/ecommercefactorit
     ports:
-      - 8087:8080
+      - 8087:8087
     environment:
       DATABASE_HOST: 'ecommerce-mysql'
       DATABASE_PORT: '3038'

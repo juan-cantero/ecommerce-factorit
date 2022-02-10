@@ -2,7 +2,7 @@ FROM openjdk:17-alpine
 
 MAINTAINER Juan Cantero "juan.cantero@outlook.com"
 
-EXPOSE 8080
+EXPOSE 8087
 
 WORKDIR /usr/local/bin/
 
