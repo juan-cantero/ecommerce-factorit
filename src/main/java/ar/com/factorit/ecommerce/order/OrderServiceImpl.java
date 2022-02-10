@@ -66,6 +66,7 @@ public class OrderServiceImpl implements OrderService {
             OrderItem orderItem = OrderItem.builder()
                     .createdDate(LocalDate.now())
                     .product(item.getProduct())
+                    .price(item.getProduct().getPrice())
                     .quantity(item.getQuantity())
                     .order(newOrder)
                     .build();

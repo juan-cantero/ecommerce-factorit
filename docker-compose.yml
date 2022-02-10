@@ -1,7 +1,10 @@
 version: '3.3'
 services:
-  db:
+
+  ecommerce-mysql:
     image: mysql:5.7
+    networks:
+      - ecommerce-net
     restart: always
     environment:
       MYSQL_DATABASE: 'ecommerce'
@@ -10,8 +13,7 @@ services:
       MYSQL_ROOT_PASSWORD: 'password'
     ports:
       - '3308:3306'
-    expose:
-      - '3306'
+
     volumes:
       - my-db:/var/lib/mysql
 
@@ -21,5 +23,28 @@ services:
     restart: always
     ports:
       - 8182:8080
+    networks:
+      - ecommerce-net
+
+#  ecommerce-main:
+#    image: juancantero/ecommercefactorit
+#    ports:
+#      - 8087:8080
+#    environment:
+#      DATABASE_HOST: 'ecommerce-mysql'
+#      DATABASE_PORT: '3038'
+#      DATABASE_NAME: 'ecommerce'
+#      DATABASE_USER: 'user'
+#      DATABASE_PASSWORD: 'password'
+#
+#      SPRING_DATASOURCE_URL: 'jdbc:mysql://ecommerce-mysql:3306/ecommerce?autoReconnect=true&useSSL=false'
+#
+#    depends_on:
+#      - ecommerce-mysql
+#    networks:
+#      - ecommerce-net
 volumes:
   my-db:
+
+networks:
+  ecommerce-net:

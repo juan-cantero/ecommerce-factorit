@@ -14,3 +14,11 @@ insert into products values(3, 'compu home', 'compuhome.image.url','compu home',
 insert into products values(4, 'migral', 'migral.image.url','migral',200.00,3);
 
 
+insert into orders values (1, '2022-02-08', 0, 799850.00, '2446b3a3-094b-4d4c-a5ec-9899f79ba93b'
+, 0, 22333444);
+
+insert into order_items values (1, '2022-02-08', 100000.00, 8, 1, 3);
+
+
+
+

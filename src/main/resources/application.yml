@@ -3,7 +3,7 @@ server:
 
 spring:
   profiles:
-    active: dev-inmem-database
+    active: dev-h2-database
   output:
     ansi:
       enabled: always
@@ -33,7 +33,7 @@ spring:
 ---
 
 spring:
-  profiles: dev-inmem-database
+  profiles: dev-h2-database
   sql:
     init:
       mode: always
@@ -46,5 +46,22 @@ spring:
     database-platfrom: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: create-drop
+    show-sql: true
+    defer-datasource-initialization: true
+
+---
+spring:
+  profiles: docker
+  sql:
+    init:
+      mode: always
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: password
+    url: jdbc:mysql://ecommerce-mysql:3308/ecommerce
+    username: user
+  jpa:
+    hibernate:
+      ddl-auto: create
     show-sql: true
     defer-datasource-initialization: true

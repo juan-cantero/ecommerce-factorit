@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "138efb4d-e360-4c29-b54d-a77e3245bf37",
+		"name": "ecommerce-factorit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "List products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "Add product to cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"productId\": 2,\r\n  \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8087/api/cart/add?token=abc&&isSpecial=true",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"cart",
+								"add"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "abc"
+								},
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": "isSpecial",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get items from cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product from cart",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8087/api/cart/2/delete?token=abc",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"cart",
+								"2",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "abc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "Place Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8087/api/order/placeorder?token=abc",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"order",
+								"placeorder"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "abc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8087/api/order/?token=abc&from=08/02/2022&to=08/02/2022&orderByTotal=true",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"api",
+								"order",
+								""
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "abc"
+								},
+								{
+									"key": "from",
+									"value": "08/02/2022"
+								},
+								{
+									"key": "to",
+									"value": "08/02/2022"
+								},
+								{
+									"key": "orderByTotal",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
