@@ -52,7 +52,7 @@ hay que pasarlo en como un request param, si! no es nada seguro en una aplicacio
 
 #Consideraciones importantes:
 
-La api puede estar mucho mejor, la base de datos podría tener más constraints, hice los test solamente probando 
+Maneje mi tiempo lo mejor que pude para crear la api pero se puede mejorar un poco: la base de datos podría tener más constraints, hice los test solamente probando 
 parte del dinero que siempre es la más importante (pero con tiempo puedo hacer integration tests, test en la
 capa de datos, los servicios). Elegi fechas sin hora porque es una app de prueba, en un pedido la hora es muy 
 importante pero no lo considere para esta solucion. User en esta app es el usuario administrador y tambien 
